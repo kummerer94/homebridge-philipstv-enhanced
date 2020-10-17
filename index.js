@@ -731,6 +731,7 @@ HttpStatusAccessory.prototype = {
 
 	setVolumeLevel: function(volumeLevel, callback, context) {
 		var TV_Adjusted_volumeLevel = Math.round(volumeLevel / 100 * 60);
+		this.log("Setting adjusted volume level to: %s", TV_Adjusted_volumeLevel);
 		var url = this.audio_url;
 		var body = JSON.stringify({"current": TV_Adjusted_volumeLevel});
 		var that = this;
